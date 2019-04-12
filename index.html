@@ -1,3 +1,13 @@
+<!--
+Copyright (c) Slidear (as Doomcastle) 2019
+All rights reserved
+Licensed under the Apache license, 2.0.
+
+TODO: Create doomcastle.github.io/LICENSE  done: [ ]
+      Create doomcastle.github.io/CODE     done: [ ]
+      create doomcastle.github.io/ABOUT    done: [ ]
+-->
+
 <head>
   <title>Doom castle</title>
   <link rel="icon" href="https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1555066284419-secure.ico">
@@ -571,20 +581,4 @@ function runGame(plans, Display) {
 
 runGame(LEVELS, DOMDisplay);
 
-const times = [];
-let fps;
-
-function refreshLoop() {
-  window.requestAnimationFrame(() => {
-    const now = performance.now();
-    while (times.length > 0 && times[0] <= now - 1000) {
-      times.shift();
-    }
-    times.push(now);
-    fps = times.length;
-    refreshLoop();
-  });
-}
-document.writeln("FPS:" + fps);
-refreshLoop();
 </script>
